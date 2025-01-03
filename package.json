@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "dev": "npx nodemon src/index.js",
@@ -13,9 +14,11 @@
   "author": "Aaron Sosa | Senior AI Engineers",
   "license": "ISC",
   "dependencies": {
+    "@genkit-ai/googleai": "^0.9.12",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "genkit": "^0.9.12",
     "helmet": "^8.0.0"
   },
   "devDependencies": {
