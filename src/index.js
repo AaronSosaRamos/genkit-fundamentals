@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 
 import { fundamentals_test } from './fundamentals/fundamentals.js';
+import { indexMenu } from './rag/indexMenu.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,6 +26,15 @@ app.post('/test', async (req, res) => {
   }
   const result = await fundamentals_test(query);
   res.status(200).send(result);
+});
+
+app.post('/index', async (req, res) => {
+  const { fileName } = req.body;
+  if (!fileName) {
+    return res.status(400).send('File Name is required');
+  }
+  await indexMenu(fileName);
+  res.status(200).send("Index has been generated successfully");
 });
 
 app.listen(PORT, () => {

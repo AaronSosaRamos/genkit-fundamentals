@@ -1,0 +1,35 @@
+<div class="wrapper">
+    @if (llmIndex === undefined) {
+    <h2>Choose an LLM</h2>
+    @for (name of llmNames; track name; let index = $index) {
+    <button (click)="llmIndex = index" mat-raised-button>{{ name }}</button>
+    }
+    } @else {
+    <h2>Chat with {{ llmNames[llmIndex] }}</h2>
+
+    <div *ngFor="let entry of history; let i = index">
+        <div *ngIf="entry.role === 'user'" class="user-bubble">
+            {{ entry.text }}
+        </div>
+        <div *ngIf="entry.role === 'model'" class="model-bubble">
+            <span *ngIf="entry.text" class="text">
+                <markdown class="variable-binding" [data]="entry.text"></markdown>
+            </span>
+        </div>
+    </div>
+
+    @if (error) {
+    <pre class="error">{{ error }}</pre>
+    }
+
+    <form>
+        <mat-form-field class="input-field">
+            <mat-label>Chat input. Press Enter to submit (Shift+Enter for line
+                break)</mat-label>
+            <textarea matInput (keypress)="keyPress($event)" [formControl]="chatFormControl"
+                placeholder="Hi..."></textarea>
+            <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+        </mat-form-field>
+    </form>
+    }
+</div>

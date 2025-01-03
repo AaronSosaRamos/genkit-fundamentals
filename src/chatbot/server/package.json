@@ -1,0 +1,30 @@
+{
+    "main": "server.ts",
+    "type": "module",
+    "scripts": {
+        "start": "ts-node server.ts",
+        "genkit:dev": "genkit start -- npm run dev",
+        "dev": "tsx --watch server.ts",
+        "build": "tsc",
+        "build:watch": "tsc --watch",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "name": "server",
+    "version": "1.0.0",
+    "keywords": [],
+    "author": "Aaron Sosa | Senior AI Engineer",
+    "license": "ISC",
+    "dependencies": {
+        "@genkit-ai/vertexai": "^0.9.0-rc || ^0.9",
+        "express": "^4.21.0",
+        "genkit": "^0.9.0-rc || ^0.9",
+        "partial-json": "^0.1.7",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "genkit-cli": "^0.9.0-rc || ^0.9",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.19.2",
+        "typescript": "^5.7.2"
+    }
+}

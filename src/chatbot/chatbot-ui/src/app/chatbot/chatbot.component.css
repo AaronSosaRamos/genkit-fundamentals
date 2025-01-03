@@ -1,0 +1,61 @@
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 800px;
+}
+
+.user-bubble {
+    background-color: bisque;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 0;
+    min-width: 300px;
+    padding: 20px;
+    white-space: pre-wrap;
+    width: 80%;
+}
+
+.model-bubble {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-width: 300px;
+    padding: 20px;
+    width: 80%;
+
+    &.llm-0 {
+        background-color: rgb(218, 247, 237);
+    }
+
+    &.llm-1 {
+        background-color: rgb(244, 216, 247);
+    }
+
+    .text {
+        white-space: pre-wrap;
+    }
+
+    .model-name {
+        font-size: small;
+        font-weight: 100;
+        margin-bottom: 11px;
+    }
+}
+
+.input-field {
+    min-width: 400px;
+    vertical-align: top;
+    width: 730px;
+}
+
+.error {
+    background-color: pink;
+    border: 1px solid red;
+    border-radius: 15px;
+    margin: 20px 0;
+    overflow: auto;
+    padding: 20px;
+}
